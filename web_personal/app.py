@@ -59,7 +59,7 @@ def register():
 def welcome():
     email = request.form['email']
     password = request.form['password']
-    access = {'email':email}
+    access = {'email': email}
 
     return render_template('admin/index.html', user_access=access)
 
