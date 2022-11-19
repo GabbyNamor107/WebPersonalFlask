@@ -2,20 +2,10 @@
 
 {% block title % }Home{% endblock %}
 
+{% block header_img %}{{ url_for('stactic', filename='img/home-bg.jpg') }}{% endblock %}
+{% block header_title %}Gabby NaMor{% endblock %}
+{% block header_sub %}Maestra en Sistemas{% endblock %}
+
 {% block content %}
-    <!-- Cabecera -->
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="site-heading">
-              <h1>Gabby NaMor</h1>
-              <span class="subheading">Ingeniera Industrial</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
 
 {% endblock %}
