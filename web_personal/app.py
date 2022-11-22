@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -62,6 +63,10 @@ def welcome():
     access = {'email': email}
 
     return render_template('admin/index.html', user_access=access)
+
+@app.errorhandler(404)
+def page_error_not_found(e):
+    return render_template('error/404.html'), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
