@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
-{% block title % }Acerca de{% endblock %}
+{% block title %}Acerca de{% endblock %}
 
-{% block header_img %}{{ url_for('stactic', filename='img/about-bg.jpg') }}{% endblock %}
+{% block header_img %}{{ url_for('static', filename='img/about-bg.jpg') }}{% endblock %}
 {% block header_title %}Acerca de{% endblock %}
 {% block header_sub %}Biografia{% endblock %}
 
@@ -11,7 +11,7 @@
     <div class="container">
       <div class="row">   
         <div class="col-lg-3 col-md-4 offset-lg-1">
-          <img class="img-fluid avatar" src="{{ url_for('stactic', filename='img/avatar.jpg') }}" alt="">
+          <img class="img-fluid avatar" src="{{ url_for('static', filename='img/avatar.jpg') }}" alt="">
         </div>
         <div class="col-lg-7 col-md-8">
           <h2 class="section-heading">Gabby NaMor</h2>   
