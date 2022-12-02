@@ -51,8 +51,8 @@ def portfolio():
 
 ############# Formularios de WTForms #################
 class LoginForm(FlaskForm):
-    username = EmailField('Username')
-    password = PasswordField('Password')
+    email = EmailField('Correo', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Ingresar')
 
 ############# Rutas Login ############
@@ -66,12 +66,13 @@ def register():
     return render_template('/auth/register.html')  
 
 @app.route('/welcome', methods=['GET', 'POST'])
-def welcome():
-    email = request.form['email']
-    password = request.form['password']
-    access = {'email': email}
+def welcome(form):
 
-    return render_template('admin/index.html', user_access=access)
+    if form.validate_on_submit():
+        email = form.email.data
+        password = form.password.data
+
+        return render_template('admin/index.html', user_access=access)
 
 @app.errorhandler(404)
 def page_error_not_found(e):
