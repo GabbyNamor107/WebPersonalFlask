@@ -51,9 +51,9 @@ def portfolio():
 
 ############# Formularios de WTForms #################
 class LoginForm(FlaskForm):
-    email = EmailField('Correo', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField('Ingresar')
+    email = EmailField('Username')
+    password = PasswordField('Password')
+    submit = SubmitField('Login')
 
 ############# Rutas Login ############
 @app.route('/auth/login')
