@@ -1,6 +1,8 @@
 ######### Imports Flask & Python ###########
 from flask import render_template, Blueprint
 
+from db.db_connection import get_connection
+
 ########### Imports Forms #############
 from .form import LoginForm, RegisterForm
 
@@ -15,6 +17,8 @@ def login():
         email = form.email.data
         password = form.password.data
 
+        ######### TODO: Validar usuarios #########
+
         return render_template('admin/index.html', email=email)
 
     return render_template('auth/login.html', form=form)
@@ -23,5 +27,8 @@ def login():
 def register():
 
     form = RegisterForm()
+
+    ########## TODO: Validar usuarios para registro ##########
+
 
     return render_template('auth/register.html', form=form)
