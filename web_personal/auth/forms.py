@@ -12,10 +12,10 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Ingresar')
 
 class registerForm(FlaskForm):
-    name = StringField('Nombre')
-    las_name = StringField('Apellidos')
-    email = EmailField('Correo')
-    password = PasswordField('Contraseña')
+    name = StringField('Nombre', validators=[DataRequired()])
+    last_name = StringField('Apellidos', validators=[DataRequired()])
+    email = EmailField('Correo', validators=[DataRequired(), Email()])
+    password = PasswordField('Contraseña', validators=[DataRequired()])
     phone = IntegerField('Telefono')
     is_married = RadioField('Estado Civil', choices=[('True', 'Casado'), ('False', 'Soltero')])
     gender = SelectField('Genero', choices=[('male', 'Masculino'), ('female', 'Femenino'), ('other', 'Otro')])
